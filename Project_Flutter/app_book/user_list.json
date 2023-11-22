@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "female",
+            "name": {
+                "title": "Ms",
+                "first": "Mathilde",
+                "last": "Christensen"
+            },
+            "location": {
+                "street": {
+                    "number": 6487,
+                    "name": "Bakkedraget"
+                },
+                "city": "Gørløse",
+                "state": "Danmark",
+                "country": "Denmark",
+                "postcode": 44268,
+                "coordinates": {
+                    "latitude": "-40.9280",
+                    "longitude": "144.0358"
+                },
+                "timezone": {
+                    "offset": "+5:45",
+                    "description": "Kathmandu"
+                }
+            },
+            "email": "mathilde.christensen@example.com",
+            "login": {
+                "uuid": "a1eca041-6635-45d0-a304-dca68c7b09a1",
+                "username": "crazyswan819",
+                "password": "23skidoo",
+                "salt": "AowvZdQm",
+                "md5": "5932297e133a2f8bd271f9c50bbf613c",
+                "sha1": "15646e3adc970d88aadfc879dee0faa52ec37ef7",
+                "sha256": "72d8d7b373a623b0b5e8f2e1b4bb6c39a9cd76032fcec7e1482598bdf4993f91"
+            },
+            "dob": {
+                "date": "1981-04-23T10:07:09.946Z",
+                "age": 42
+            },
+            "registered": {
+                "date": "2010-11-08T15:35:09.701Z",
+                "age": 13
+            },
+            "phone": "74705606",
+            "cell": "38691447",
+            "id": {
+                "name": "CPR",
+                "value": "230481-3512"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/51.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/51.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/51.jpg"
+            },
+            "nat": "DK"
+        }
+    ],
+    "info": {
+        "seed": "cfcaf0b54328ee31",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}
