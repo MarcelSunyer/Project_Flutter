@@ -1,7 +1,4 @@
 import 'dart:convert';
-
-import 'package:app_book/models/book.dart';
-import 'package:flutter/material.dart';
 import "package:http/http.dart" as http;
 class Book {
   final int rank;
@@ -48,9 +45,6 @@ Future<List<Book>> apiLoadBooks() async {
     }
 
     return bookList;
-  } else {
-    // Manejar el caso donde las claves 'results' o 'books' son null
-    print('Error: No se encontró la clave "results" o "books" en el JSON.');
-    return []; // Devolver una lista vacía o manejar de otra manera según tus necesidades
-  }
+  } 
+  return[];
 }
