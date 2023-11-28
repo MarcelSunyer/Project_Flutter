@@ -13,7 +13,7 @@ class ListaLibros extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Library',
+                'My Books',
                 style: TextStyle(
                   fontSize: 50,
                   fontFamily: 'MiFuente',

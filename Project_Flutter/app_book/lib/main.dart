@@ -1,4 +1,5 @@
 import 'package:app_book/Widgets/lista_libros.dart';
+import 'package:app_book/Widgets/menu_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +11,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: ListaLibros(),
+        body: Center(
+          child: Stack(
+            children: [
+              const ListaLibros(),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    MenuBarBook(
+                      width: 500,
+                      height: 75,
+                      borderRadius: 30,
+                      backgroundColor: const Color.fromARGB(255, 97, 97, 97),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
