@@ -1,5 +1,6 @@
 import 'package:app_book/api.dart';
-import 'package:app_book/models/users.dart';
+import 'package:app_book/models/users.dart' as BookModel; // Assuming you have a 'Book' class
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,27 +8,26 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: FutureBuilder(
-          future: apiLoadUsers(),
+          future: apiLoadBooks(),
           builder: (
             BuildContext context,
-            AsyncSnapshot<List<User>> snapshot,
+            AsyncSnapshot<List<Book>> snapshot,
           ) {
             if (!snapshot.hasData) {
               return const Center(child: CircularProgressIndicator());
             }
-            final userList = snapshot.data!;
+            final bookList = snapshot.data!;
             return ListView.builder(
-              itemCount: userList.length,
+              itemCount: bookList.length,
               itemBuilder: (BuildContext context, int index) {
-                return UserListItem(user: userList[index]);
+                return BookListItem(book: bookList[index]);
               },
             );
           },
@@ -37,21 +37,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class UserListItem extends StatelessWidget {
-  const UserListItem({
-    super.key,
-    required this.user,
-  });
+class BookListItem extends StatelessWidget {
+  const BookListItem({
+    Key? key,
+    required this.book,
+  }) : super(key: key);
 
-  final User user;
+  final Book book;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text("${user.firstName}${user.lastName}"),
-      subtitle: Text(user.email),
+      title: Text(book.title),
+      subtitle: Text(book.author),
       leading: CircleAvatar(
-        backgroundImage: NetworkImage(user.avatarUrl),
+        backgroundImage: NetworkImage(book.imageUrl),
       ),
     );
   }
