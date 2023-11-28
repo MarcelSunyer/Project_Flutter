@@ -1,37 +1,54 @@
 import 'package:app_book/api.dart';
 import 'package:flutter/material.dart';
 
-class Lista_Libros extends StatelessWidget {
-  const Lista_Libros({super.key});
+class ListaLibros extends StatelessWidget {
+  const ListaLibros({super.key});
 
- @override
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: FutureBuilder(
-          future: apiLoadBooks(),
-          builder: (
-            BuildContext context,
-            AsyncSnapshot<List<Book>> snapshot,
-          ) {
-            if (!snapshot.hasData) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            final bookList = snapshot.data!;
-            return SingleChildScrollView(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: bookList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
-                      BookListItem(book: bookList[index]),
-                    ],
+        body: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Library',
+                style: TextStyle(
+                  fontSize: 50,
+                  fontFamily: 'MiFuente',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Expanded(
+              child: FutureBuilder(
+                future: apiLoadBooks(),
+                builder: (
+                  BuildContext context,
+                  AsyncSnapshot<List<Book>> snapshot,
+                ) {
+                  if (!snapshot.hasData) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  final bookList = snapshot.data!;
+                  return SingleChildScrollView(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: bookList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: [
+                            BookListItem(book: bookList[index]),
+                          ],
+                        );
+                      },
+                    ),
                   );
                 },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );
