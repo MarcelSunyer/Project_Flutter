@@ -1,6 +1,4 @@
 import 'package:app_book/api.dart';
-import 'package:app_book/models/users.dart' as BookModel; // Assuming you have a 'Book' class
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,11 +22,14 @@ class MyApp extends StatelessWidget {
               return const Center(child: CircularProgressIndicator());
             }
             final bookList = snapshot.data!;
-            return ListView.builder(
-              itemCount: bookList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return BookListItem(book: bookList[index]);
-              },
+            return SingleChildScrollView(
+              child: ListView.builder(
+                shrinkWrap: true, // Esto permite que el ListView se ajuste al contenido dentro de SingleChildScrollView
+                itemCount: bookList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return BookListItem(book: bookList[index]);
+                },
+              ),
             );
           },
         ),
@@ -50,8 +51,16 @@ class BookListItem extends StatelessWidget {
     return ListTile(
       title: Text(book.title),
       subtitle: Text(book.author),
-      leading: CircleAvatar(
-        backgroundImage: NetworkImage(book.imageUrl),
+      leading: SizedBox(
+        width: 350, // Ancho deseado
+        height: 100, // Altura deseada
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0), // Ajusta según tus necesidades
+          child: Image.network(
+            book.imageUrl,
+            fit: BoxFit.cover, // Otra opción para ajustar la imagen al contenedor
+          ),
+        ),
       ),
     );
   }
