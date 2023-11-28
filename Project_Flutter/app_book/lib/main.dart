@@ -14,22 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const ListaLibros(),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    MenuBarBook(
-                      width: 500,
-                      height: 75,
-                      borderRadius: 30,
-                      backgroundColor: const Color.fromARGB(255, 97, 97, 97),
-                    ),
-                  ],
-                ),
+              const Expanded(
+                child: ListaLibros(),
+              ),
+              const SizedBox(height: 20),
+              MenuBarBook(
+                width: 500,
+                height: 75,
+                borderRadius: 30,
+                backgroundColor: const Color.fromARGB(255, 97, 97, 97),
               ),
             ],
           ),
