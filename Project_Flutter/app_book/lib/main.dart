@@ -7,31 +7,31 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: Center(
           child: Stack(
             children: [
-              const Expanded(
+              Expanded(
                 child: ListaLibros(),
               ),
               Center(
                 child: Column(
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       height: 675,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
+                      padding: EdgeInsets.only(bottom: 8.0),
                       child: MenuBarBook(
                         width: 450,
                         height: 75,
                         borderRadius: 30,
-                        backgroundColor: const Color.fromARGB(255, 97, 97, 97),
+                        backgroundColor: Color.fromARGB(255, 97, 97, 97),
                       ),
                     ),
                   ],
