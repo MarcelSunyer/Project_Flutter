@@ -63,22 +63,57 @@ class BookListItem extends StatelessWidget {
 
   final Book book;
 
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(book.title),
-      subtitle: Text(book.author),
-      leading: SizedBox(
-        width: 350,
-        height: 100,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: Image.network(
-            book.imageUrl,
-            fit: BoxFit.cover,
+@override
+Widget build(BuildContext context) {
+  return Container(
+    margin: const EdgeInsets.all(8.0), // Puedes ajustar el margen según tus necesidades
+    padding: const EdgeInsets.all(8.0), // Puedes ajustar el padding según tus necesidades
+    decoration: BoxDecoration(
+      border: Border.all(
+        color: Colors.grey,
+        width: 1.0,
+      ),
+      borderRadius: BorderRadius.circular(8.0),
+    ),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 150,
+          height: 250,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.network(
+              book.imageUrl,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-      ),
-    );
-  }
+        const SizedBox(width: 16.0), // Puedes ajustar el espacio entre la imagen y el texto
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center, // Centra verticalmente el contenido
+            children: [
+              Text(
+                book.title,
+                style: const TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8.0), // Puedes ajustar el espacio entre el título y el autor
+              Text(
+                book.author,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
 }

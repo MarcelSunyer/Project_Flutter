@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 20),
               MenuBarBook(
                 width: 500,
-                height: 75,
+                height: 50,
                 borderRadius: 30,
                 backgroundColor: const Color.fromARGB(255, 97, 97, 97),
               ),
