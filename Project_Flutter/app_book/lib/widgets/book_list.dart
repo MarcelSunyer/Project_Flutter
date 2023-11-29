@@ -1,3 +1,4 @@
+import 'package:app_book/Widgets/progress_bar.dart';
 import 'package:app_book/api.dart';
 import 'package:flutter/material.dart';
 
@@ -131,6 +132,8 @@ class BookListItem extends StatelessWidget {
                     fontSize: 14.0,
                   ),
                 ),
+                const SizedBox(height: 12.0),
+                const RandomProgressBar(),
               ],
             ),
           ),
