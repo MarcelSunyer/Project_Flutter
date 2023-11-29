@@ -24,12 +24,30 @@ class MenuBarBook extends StatelessWidget {
         color: backgroundColor,
       ),
       padding: const EdgeInsets.all(16.0),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Icon(Icons.home_outlined, color: Colors.white),
-          Icon(Icons.search_outlined, color: Colors.white),
-          Icon(Icons.auto_stories_outlined, color: Colors.white),
+          InkWell(
+            onTap: () {
+              // Navegar a la pantalla de "Home"
+              Navigator.of(context).pushNamed("/");
+            },
+            child: Icon(Icons.home_outlined, color: Colors.white),
+          ),
+          InkWell(
+            onTap: () {
+              // Navegar a la pantalla de "Library"
+              Navigator.of(context).pushNamed("/");
+            },
+            child: Icon(Icons.search_outlined, color: Colors.white),
+          ),
+          InkWell(
+            onTap: () {
+              // Navegar a la pantalla de "My Books"
+              Navigator.of(context).pushNamed("/");
+            },
+            child: Icon(Icons.auto_stories_outlined, color: Colors.white),
+          ),
         ],
       ),
     );

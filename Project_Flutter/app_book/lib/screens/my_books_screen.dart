@@ -18,22 +18,16 @@ class MyBooksScreen extends StatelessWidget {
                   itemHeight: 250,
                 ),
               ),
-              Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 675,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 8.0),
-                      child: MenuBarBook(
-                        width: 450,
-                        height: 75,
-                        borderRadius: 30,
-                        backgroundColor: Color.fromARGB(255, 97, 97, 97),
-                      ),
-                    ),
-                  ],
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: MenuBarBook(
+                    width: 450,
+                    height: 75,
+                    borderRadius: 30,
+                    backgroundColor: Color.fromARGB(255, 97, 97, 97),
+                  ),
                 ),
               ),
             ],

@@ -113,15 +113,22 @@ class BookListItem extends StatelessWidget {
                 Text(
                   book.title,
                   style: const TextStyle(
-                    fontSize: 18.0,
+                    fontSize: 22.0,
                     fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4.0),
+                Text(
+                  book.author,
+                  style: const TextStyle(
+                    fontSize: 18.0,
                   ),
                 ),
                 const SizedBox(height: 8.0),
                 Text(
-                  book.author,
+                  book.description,
                   style: const TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
               ],
