@@ -1,5 +1,5 @@
-import 'package:app_book/Widgets/lista_libros.dart';
-import 'package:app_book/Widgets/menu_bar.dart';
+import 'package:app_book/widgets/book_list.dart';
+import 'package:app_book/widgets/menu_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
           child: Stack(
             children: [
               const Expanded(
-                child: ListaLibros(),
+                child: BookListScreen(
+                  itemWidth: 150,
+                  itemHeight: 250,
+                ),
               ),
               Center(
                 child: Column(
