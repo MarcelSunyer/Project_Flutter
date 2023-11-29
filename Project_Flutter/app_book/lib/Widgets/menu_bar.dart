@@ -6,7 +6,7 @@ class MenuBarBook extends StatelessWidget {
   final double borderRadius;
   final Color backgroundColor;
 
-  const MenuBarBook({
+  MenuBarBook({
     Key? key,
     this.width = 200.0,
     this.height = 50.0,
