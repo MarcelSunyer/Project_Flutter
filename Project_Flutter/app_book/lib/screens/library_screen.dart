@@ -1,4 +1,5 @@
 import 'package:app_book/Widgets/menu_bar.dart';
+import 'package:app_book/widgets/book_genre_widget.dart';
 import 'package:app_book/widgets/book_search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -49,6 +50,18 @@ class LibraryScreen extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    GenreWidget(
+                      genre: "Novel",
+                      icon: Icons.book_outlined,
+                      color: const Color.fromARGB(255, 215, 100, 60),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
