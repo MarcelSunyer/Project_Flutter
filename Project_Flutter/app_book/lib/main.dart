@@ -1,4 +1,5 @@
 import 'package:app_book/screens/home_screen.dart';
+import 'package:app_book/screens/library_screen.dart';
 import 'package:app_book/screens/my_books_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) =>  HomeScreen(),
         "/mybooks": (context) =>  MyBooksScreen(),
+        "/library": (context) => LibraryScreen(),
       },
     );
   }

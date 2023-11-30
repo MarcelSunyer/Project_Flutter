@@ -55,7 +55,7 @@ class MenuBarBook extends StatelessWidget {
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "Library"
-                  Navigator.of(context).pushNamed('/');
+                  Navigator.of(context).pushNamed('/library');
                 },
                 child: const Column(
                   children: [
