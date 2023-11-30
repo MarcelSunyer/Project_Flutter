@@ -1,5 +1,6 @@
 import 'package:app_book/Widgets/menu_bar.dart';
 import 'package:app_book/widgets/book_genre_widget.dart';
+import 'package:app_book/widgets/book_row.dart';
 import 'package:app_book/widgets/book_search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -106,6 +107,31 @@ class LibraryScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 15.0, top: 10.0),
+                    child: Text(
+                      'Novel',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontFamily: 'MyFont',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 15.0, top: 10.0),
+                    child: Icon(
+                      Icons.east,
+                      size: 40.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+              BookRow(itemWidth: 91, itemHeight: 123),
             ],
           ),
           const Align(
