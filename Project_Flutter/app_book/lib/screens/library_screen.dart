@@ -1,4 +1,5 @@
 import 'package:app_book/Widgets/menu_bar.dart';
+import 'package:app_book/widgets/book_search_bar.dart';
 import 'package:flutter/material.dart';
 
 class LibraryScreen extends StatelessWidget {
@@ -9,6 +10,24 @@ class LibraryScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          Column(
+            children: [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'Library',
+                    style: TextStyle(
+                      fontSize: 50,
+                      fontFamily: 'MyFont',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              SearchBarWidget(),
+            ],
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
