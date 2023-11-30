@@ -43,24 +43,24 @@ class MenuBarBook extends StatelessWidget {
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "Home"
-                  Navigator.of(context).pushNamed("/");
+                 Navigator.pushNamed(context, '/');
                 },
-                child: Column(
+                child: const Column(
                   children: [
-                    const Icon(Icons.home_outlined, color: Colors.white),
-                    const Text("Home", style: TextStyle(color: Colors.white,  fontSize: 10.0)),
+                    Icon(Icons.home_outlined, color: Colors.white),
+                    Text("Home", style: TextStyle(color: Colors.white,  fontSize: 10.0)),
                   ],
                 ),
               ),
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "Library"
-                  Navigator.of(context).pushNamed("/");
+                  Navigator.pushNamed(context, '/home');
                 },
-                child: Column(
+                child: const Column(
                   children: [
-                    const Icon(Icons.search_outlined, color: Colors.white),
-                    const Text("Library", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                    Icon(Icons.search_outlined, color: Colors.white),
+                    Text("Library", style: TextStyle(color: Colors.white, fontSize: 10.0)),
                   ],
                 ),
               ),
@@ -69,10 +69,10 @@ class MenuBarBook extends StatelessWidget {
                   // Navegar a la pantalla de "My Books"
                   Navigator.of(context).pushNamed("/");
                 },
-                child: Column(
+                child: const Column(
                   children: [
-                    const Icon(Icons.auto_stories_outlined, color: Colors.white),
-                    const Text("My Books", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                    Icon(Icons.auto_stories_outlined, color: Colors.white),
+                    Text("My Books", style: TextStyle(color: Colors.white, fontSize: 10.0)),
                   ],
                 ),
               ),
