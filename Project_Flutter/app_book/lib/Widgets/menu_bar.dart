@@ -45,21 +45,36 @@ class MenuBarBook extends StatelessWidget {
                   // Navegar a la pantalla de "Home"
                   Navigator.of(context).pushNamed("/");
                 },
-                child: const Icon(Icons.home_outlined, color: Colors.white),
+                child: Column(
+                  children: [
+                    const Icon(Icons.home_outlined, color: Colors.white),
+                    const Text("Home", style: TextStyle(color: Colors.white,  fontSize: 10.0)),
+                  ],
+                ),
               ),
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "Library"
                   Navigator.of(context).pushNamed("/");
                 },
-                child: const Icon(Icons.search_outlined, color: Colors.white),
+                child: Column(
+                  children: [
+                    const Icon(Icons.search_outlined, color: Colors.white),
+                    const Text("Library", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                  ],
+                ),
               ),
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "My Books"
                   Navigator.of(context).pushNamed("/");
                 },
-                child: const Icon(Icons.auto_stories_outlined, color: Colors.white),
+                child: Column(
+                  children: [
+                    const Icon(Icons.auto_stories_outlined, color: Colors.white),
+                    const Text("My Books", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                  ],
+                ),
               ),
             ],
           ),
