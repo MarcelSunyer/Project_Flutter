@@ -4,18 +4,19 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
         color: Colors.grey[200],
+        border: Border.all(color: Colors.grey, width: 2.0),
       ),
       child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Icon(Icons.search, color: Colors.grey),
           ),
-          Expanded(
+          const Expanded(
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Book, author, theme...',
@@ -24,13 +25,13 @@ class SearchBarWidget extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(8),
-            padding: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(15),
             ),
-            child: Icon(Icons.settings, color: Colors.white),
+            child: const Icon(Icons.tune, color: Colors.white),
           ),
         ],
       ),

@@ -12,7 +12,7 @@ class LibraryScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Center(
+              const Center(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
@@ -26,9 +26,33 @@ class LibraryScreen extends StatelessWidget {
                 ),
               ),
               SearchBarWidget(),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 15.0, top: 10.0),
+                    child: Text(
+                      'Categories',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontFamily: 'MyFont',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 15.0, top: 10.0),
+                    child: Icon(
+                      Icons.east,
+                      size: 40.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.only(bottom: 8.0),
