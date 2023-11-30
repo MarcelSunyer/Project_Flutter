@@ -7,40 +7,41 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack( 
-        children: [Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: const Center(
-                  child: Text(
-                    'Hola',
-                    style: TextStyle(color: Colors.white),
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.blue,
+                  child: const Center(
+                    child: Text(
+                      'Hola',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              
-            ],
+                SizedBox(height: 20),
+              ],
+            ),
           ),
-        ),
-      Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 8.0),
-                child: MenuBarBook(
-                  width: 450,
-                  height: 75,
-                  borderRadius: 30,
-                  backgroundColor: Color.fromARGB(240, 39, 42, 52),
-                ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 8.0),
+              child: MenuBarBook(
+                width: 450,
+                height: 75,
+                borderRadius: 30,
+                backgroundColor: Color.fromARGB(240, 39, 42, 52),
               ),
             ),
-            ],),
+          ),
+        ],
+      ),
     );
   }
 }

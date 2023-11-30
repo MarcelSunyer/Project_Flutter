@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) =>  MyBooksScreen(),
-        "/home": (context) =>  HomeScreen(),
+        "/": (context) =>  HomeScreen(),
+        "/mybooks": (context) =>  MyBooksScreen(),
       },
     );
   }

@@ -43,7 +43,7 @@ class MenuBarBook extends StatelessWidget {
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "Home"
-                 Navigator.of(context).pushNamed('/home');
+                 Navigator.of(context).pushNamed('/');
                 },
                 child: const Column(
                   children: [
@@ -67,7 +67,7 @@ class MenuBarBook extends StatelessWidget {
               InkWell(
                 onTap: () {
                   // Navegar a la pantalla de "My Books"
-                  Navigator.of(context).pushNamed("/");
+                  Navigator.of(context).pushNamed("/mybooks");
                 },
                 child: const Column(
                   children: [
