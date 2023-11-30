@@ -51,18 +51,35 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
+              Row(
                   children: [
-                    GenreWidget(
-                      genre: "Novel",
-                      icon: Icons.book_outlined,
-                      color: const Color.fromARGB(255, 215, 100, 60),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GenreWidget(
+                        genre: "Novel",
+                        icon: Icons.book_outlined,
+                        color: const Color.fromARGB(255, 215, 100, 60),
+                      ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GenreWidget(
+                        genre: "Science",
+                        icon: Icons.biotech_outlined,
+                        color: const Color.fromARGB(255, 215, 100, 60),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GenreWidget(
+                        genre: "Motivation",
+                        icon: Icons.lightbulb_outline,
+                        color: const Color.fromARGB(255, 215, 100, 60),
+                      ),
+                    ),
+                    
                   ],
                 ),
-              )
             ],
           ),
           const Align(
