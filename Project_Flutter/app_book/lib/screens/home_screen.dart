@@ -1,27 +1,46 @@
+import 'package:app_book/Widgets/menu_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Container(
-            width: 100,  // Ancho de la caja
-            height: 100, // Altura de la caja
-            color: Colors.blue, // Color de la caja
-            child: // Puedes agregar contenido adicional dentro de la caja si es necesario
-                const Center(
-              child: Text(
-                'Hola',
-                style: TextStyle(color: Colors.white),
+    return Scaffold(
+      body: Stack( 
+        children: [Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+                child: const Center(
+                  child: Text(
+                    'Hola',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
-            ),
+              SizedBox(height: 20),
+              
+            ],
           ),
         ),
-      ),
+      Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 8.0),
+                child: MenuBarBook(
+                  width: 450,
+                  height: 75,
+                  borderRadius: 30,
+                  backgroundColor: Color.fromARGB(240, 39, 42, 52),
+                ),
+              ),
+            ),
+            ],),
     );
   }
 }

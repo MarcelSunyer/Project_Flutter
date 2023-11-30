@@ -7,15 +7,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) => const MyBooksScreen(),
-        "/home": (context) => const HomeScreen(),
+        "/": (context) =>  MyBooksScreen(),
+        "/home": (context) =>  HomeScreen(),
       },
     );
   }

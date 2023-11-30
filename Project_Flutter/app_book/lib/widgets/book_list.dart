@@ -1,4 +1,4 @@
-import 'package:app_book/Widgets/progress_bar.dart';
+import 'package:app_book/widgets/progress_bar.dart';
 import 'package:app_book/api.dart';
 import 'package:flutter/material.dart';
 
