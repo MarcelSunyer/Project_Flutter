@@ -16,40 +16,55 @@ class MenuBarBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
-        color: backgroundColor,
-      ),
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          InkWell(
-            onTap: () {
-              // Navegar a la pantalla de "Home"
-              Navigator.of(context).pushNamed("/");
-            },
-            child: const Icon(Icons.home_outlined, color: Colors.white),
+    return Stack(
+      children: [
+        // Contenedor con blur
+        Positioned.fill(
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius),
+              color: backgroundColor.withOpacity(0.5),
+            ),
           ),
-          InkWell(
-            onTap: () {
-              // Navegar a la pantalla de "Library"
-              Navigator.of(context).pushNamed("/");
-            },
-            child: const Icon(Icons.search_outlined, color: Colors.white),
+        ),
+        // Contenedor principal con margen
+        Container(
+          width: width,
+          height: height,
+          margin: EdgeInsets.all(5.0), // Ajusta el margen según sea necesario
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius - 5),
+            color: backgroundColor,
           ),
-          InkWell(
-            onTap: () {
-              // Navegar a la pantalla de "My Books"
-              Navigator.of(context).pushNamed("/");
-            },
-            child: const Icon(Icons.auto_stories_outlined, color: Colors.white),
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () {
+                  // Navegar a la pantalla de "Home"
+                  Navigator.of(context).pushNamed("/");
+                },
+                child: const Icon(Icons.home_outlined, color: Colors.white),
+              ),
+              InkWell(
+                onTap: () {
+                  // Navegar a la pantalla de "Library"
+                  Navigator.of(context).pushNamed("/");
+                },
+                child: const Icon(Icons.search_outlined, color: Colors.white),
+              ),
+              InkWell(
+                onTap: () {
+                  // Navegar a la pantalla de "My Books"
+                  Navigator.of(context).pushNamed("/");
+                },
+                child: const Icon(Icons.auto_stories_outlined, color: Colors.white),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -26,7 +26,7 @@ class MyBooksScreen extends StatelessWidget {
                     width: 450,
                     height: 75,
                     borderRadius: 30,
-                    backgroundColor: Color.fromARGB(255, 97, 97, 97),
+                    backgroundColor: Color.fromARGB(240, 39, 42, 52),
                   ),
                 ),
               ),
