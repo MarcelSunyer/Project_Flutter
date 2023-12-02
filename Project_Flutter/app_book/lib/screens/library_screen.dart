@@ -131,7 +131,32 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              BookRow(itemWidth: 91, itemHeight: 123),
+              const BookRow(itemWidth: 100, itemHeight: 170),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 15.0, top: 10.0),
+                    child: Text(
+                      'Science',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontFamily: 'MyFont',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 15.0, top: 10.0),
+                    child: Icon(
+                      Icons.east,
+                      size: 40.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+              const BookRow(itemWidth: 100, itemHeight: 170),
             ],
           ),
           const Align(
