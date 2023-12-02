@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/": (context) =>  HomeScreen(),
-        "/mybooks": (context) =>  MyBooksScreen(),
-        "/library": (context) => LibraryScreen(),
+        "/": (context) =>  const HomeScreen(),
+        "/mybooks": (context) =>  const MyBooksScreen(),
+        "/library": (context) => const LibraryScreen(),
       },
     );
   }

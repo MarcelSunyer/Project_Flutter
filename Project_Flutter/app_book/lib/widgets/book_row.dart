@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:app_book/api.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Book App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Book App'),
+          title: const Text('Book App'),
         ),
-        body: BookRow(
+        body: const BookRow(
           itemWidth: 150.0,
           itemHeight: 200.0,
           category: "hardcover-nonfiction", // Puedes cambiar la categoría aquí
@@ -100,17 +102,29 @@ class BookRowItem extends StatelessWidget {
               ),
             ),
           ),
-          Text(
-            book.title,
-            style: const TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
+          SizedBox(
+            width: width,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                book.title,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
-          Text(
-            book.author,
-            style: const TextStyle(
-              fontSize: 12.0,
+          SizedBox(
+            width: width,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                book.author,
+                style: const TextStyle(
+                  fontSize: 12.0,
+                ),
+              ),
             ),
           ),
         ],

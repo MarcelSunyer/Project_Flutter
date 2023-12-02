@@ -9,12 +9,12 @@ class LibraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         children: [
           Column(
             children: [
-              const Center(
+              Center(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
@@ -28,7 +28,7 @@ class LibraryScreen extends StatelessWidget {
                 ),
               ),
               SearchBarWidget(),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -57,57 +57,57 @@ class LibraryScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
                         genre: "Novel",
                         icon: Icons.book_outlined,
-                        color: const Color.fromARGB(255, 215, 100, 60),
+                        color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
                         genre: "Science",
                         icon: Icons.biotech_outlined,
-                        color: const Color.fromARGB(255, 215, 100, 60),
+                        color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
                         genre: "Motivation",
                         icon: Icons.lightbulb_outline,
-                        color: const Color.fromARGB(255, 215, 100, 60),
+                        color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
                         genre: "Motivation",
                         icon: Icons.lightbulb_outline,
-                        color: const Color.fromARGB(255, 215, 100, 60),
+                        color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
                         genre: "Motivation",
                         icon: Icons.lightbulb_outline,
-                        color: const Color.fromARGB(255, 215, 100, 60),
+                        color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
                         genre: "Motivation",
                         icon: Icons.lightbulb_outline,
-                        color: const Color.fromARGB(255, 215, 100, 60),
+                        color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
                   ],
                 ),
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -131,8 +131,8 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const BookRow(itemWidth: 100, itemHeight: 170, category: 'Trade Fiction Paperback'),
-              const Row(
+              BookRow(itemWidth: 100, itemHeight: 170, category: 'Trade Fiction Paperback'),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -156,10 +156,10 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const BookRow(itemWidth: 100, itemHeight: 170, category: 'Hardcover Fiction'),
+              BookRow(itemWidth: 100, itemHeight: 170, category: 'Hardcover Fiction'),
             ],
           ),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.only(bottom: 8.0),

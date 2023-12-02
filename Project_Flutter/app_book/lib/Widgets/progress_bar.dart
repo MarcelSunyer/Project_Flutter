@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RandomProgressBar extends StatelessWidget {
-  const RandomProgressBar({Key? key});
+  const RandomProgressBar({super.key});
 
   @override
   Widget build(BuildContext context) {

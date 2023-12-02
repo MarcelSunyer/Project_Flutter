@@ -5,7 +5,7 @@ class GenreWidget extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  GenreWidget({required this.genre, required this.icon, required this.color});
+  const GenreWidget({super.key, required this.genre, required this.icon, required this.color});
 
   @override
   Widget build(BuildContext context) {
