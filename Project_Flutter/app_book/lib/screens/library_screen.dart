@@ -131,7 +131,7 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const BookRow(itemWidth: 100, itemHeight: 170),
+              const BookRow(itemWidth: 100, itemHeight: 170, category: 'Trade Fiction Paperback'),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -156,7 +156,7 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const BookRow(itemWidth: 100, itemHeight: 170),
+              const BookRow(itemWidth: 100, itemHeight: 170, category: 'Hardcover Fiction'),
             ],
           ),
           const Align(

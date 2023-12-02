@@ -1,5 +1,6 @@
 import 'dart:convert';
 import "package:http/http.dart" as http;
+
 class Book {
   final int rank;
   final String title;
@@ -29,8 +30,8 @@ class Book {
   }
 }
 
-Future<List<Book>> apiLoadBooks() async {
-  final uri = Uri.parse("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=vuY5P7B0Dc4I2xGxtoEPadALIQPnIIT6");
+Future<List<Book>> apiLoadBooks({String category = "hardcover-fiction"}) async {
+  final uri = Uri.parse("https://api.nytimes.com/svc/books/v3/lists/current/$category.json?api-key=vuY5P7B0Dc4I2xGxtoEPadALIQPnIIT6");
   final response = await http.get(uri);
   final json = jsonDecode(response.body);
 
@@ -46,5 +47,5 @@ Future<List<Book>> apiLoadBooks() async {
 
     return bookList;
   } 
-  return[];
+  return [];
 }

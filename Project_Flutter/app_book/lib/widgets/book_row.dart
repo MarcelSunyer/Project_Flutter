@@ -1,15 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:app_book/api.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Book App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Book App'),
+        ),
+        body: BookRow(
+          itemWidth: 150.0,
+          itemHeight: 200.0,
+          category: "hardcover-nonfiction", // Puedes cambiar la categoría aquí
+        ),
+      ),
+    );
+  }
+}
+
 class BookRow extends StatelessWidget {
   const BookRow({
     Key? key,
     required this.itemWidth,
     required this.itemHeight,
+    required this.category,
   }) : super(key: key);
 
   final double itemWidth;
   final double itemHeight;
+  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +43,7 @@ class BookRow extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           FutureBuilder(
-            future: apiLoadBooks(),
+            future: apiLoadBooks(category: category),
             builder: (
               BuildContext context,
               AsyncSnapshot<List<Book>> snapshot,
