@@ -131,14 +131,14 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              BookRow(itemWidth: 100, itemHeight: 170, category: 'Trade Fiction Paperback'),
+              BookRow(itemWidth: 100, itemHeight: 170, category: 'Hardcover Fiction'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 15.0, top: 10.0),
                     child: Text(
-                      'Science',
+                      'Pocketbook',
                       style: TextStyle(
                         fontSize: 32,
                         fontFamily: 'MyFont',
@@ -156,7 +156,7 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              BookRow(itemWidth: 100, itemHeight: 170, category: 'Hardcover Fiction'),
+              BookRow(itemWidth: 100, itemHeight: 170, category: 'Mass Market Paperback'),
             ],
           ),
           Align(
