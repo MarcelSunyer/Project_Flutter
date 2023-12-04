@@ -45,17 +45,23 @@ class ProfileWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 50,
-                  width: 100,
-                  color: Colors.blue,
-                ),
+                 Container(
+                  height: 225,
+                  width: 175,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 130, 247, 84),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                 ),
                 SizedBox(width: 20), // Ajusta el espacio entre los contenedores según tus necesidades
-                Container(
-                  height: 50,
-                  width: 100,
-                  color: Colors.green,
-                ),
+                 Container(
+                  height: 225,
+                  width: 175,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 75, 106, 245),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                 ),
               ],
             ),
           ],
