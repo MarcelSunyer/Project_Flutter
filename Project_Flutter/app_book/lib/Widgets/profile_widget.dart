@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({Key? key}) : super(key: key);
 
@@ -16,7 +17,6 @@ class ProfileWidget extends StatelessWidget {
               backgroundImage: AssetImage('assets/icono.png'),
             ),
             const Align(
-              
               alignment: Alignment.topCenter,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ class ProfileWidget extends StatelessWidget {
                   Text(
                     'Hello, Juan!',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 95, 87, 87),
+                      color: Color.fromARGB(255, 82, 80, 80),
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                     ),
@@ -40,28 +40,29 @@ class ProfileWidget extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Container(
+                Container(
                   height: 225,
-                  width: 175,
+                  width: 150,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 130, 247, 84),
-                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromARGB(255, 60, 70, 57),
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                 ),
-                SizedBox(width: 20), // Ajusta el espacio entre los contenedores según tus necesidades
-                 Container(
+                ),
+                const SizedBox(
+                    width:
+                        75), // Ajusta el espacio entre los contenedores según tus necesidades
+                Container(
                   height: 225,
-                  width: 175,
+                  width: 150,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 75, 106, 245),
-                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromARGB(255, 105, 109, 129),
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                 ),
+                ),
               ],
             ),
           ],
