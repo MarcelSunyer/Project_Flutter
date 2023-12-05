@@ -1,5 +1,5 @@
-import 'package:app_book/Widgets/menu_bar.dart';
-import 'package:app_book/Widgets/profile_widget.dart';
+import 'package:app_book/widgets/menu_bar.dart';
+import 'package:app_book/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,7 +11,10 @@ class HomeScreen extends StatelessWidget {
     return const Scaffold(
       body: Stack(
         children: [
-          ProfileWidget(),
+          Padding(
+            padding: EdgeInsets.only(top: 22.0, left: 10.0, right: 10.0),
+            child: ProfileWidget(avatarRadius: 20.0),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(

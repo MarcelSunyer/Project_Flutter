@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
 
 class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({Key? key}) : super(key: key);
+  final double avatarRadius;
+
+  const ProfileWidget({Key? key, this.avatarRadius = 40.0}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
+    return Align(
+      alignment: Alignment.topRight,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10.0, right: 20.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Positioned(
-              top: 20,
-              right: 20,
-              child: _buildProfileAvatar(),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Text(
+                'Home',
+                style: TextStyle(
+                  fontSize: 42,
+                  fontFamily: 'MyFont',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
+            _buildProfileAvatar(),
           ],
         ),
       ),
@@ -21,10 +33,9 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget _buildProfileAvatar() {
-    return const CircleAvatar(
-      radius: 40,
+    return CircleAvatar(
+      radius: avatarRadius,
       backgroundImage: AssetImage('assets/icono.png'),
     );
   }
-
 }
