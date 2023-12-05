@@ -21,11 +21,39 @@ class HomeScreen extends StatelessWidget {
                   height: 10,
                   thickness: 0.5,
                 ),
-                 BookRow(itemHeight: 300, itemWidth: 500, category: 'Hardcover Fiction', titleFontSize: 35, authorFontSize: 20,),
+                BookRow(
+                  itemHeight: 300,
+                  itemWidth: 500,
+                  category: 'Hardcover Fiction',
+                  titleFontSize: 35,
+                  authorFontSize: 20,
+                ),
+                Divider(
+                  color: Colors.grey,
+                  height: 10,
+                  thickness: 0.5,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'New & Trending',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontFamily: 'MyFont',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                BookRow(
+                  itemHeight: 150,
+                  itemWidth: 100,
+                  category: 'Hardcover Fiction',
+                  titleFontSize: 35,
+                  authorFontSize: 20,
+                ),
               ],
             ),
           ),
-         
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
