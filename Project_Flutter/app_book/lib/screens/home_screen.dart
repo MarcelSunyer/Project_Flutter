@@ -2,7 +2,6 @@ import 'package:app_book/widgets/menu_bar.dart';
 import 'package:app_book/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -13,7 +12,17 @@ class HomeScreen extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 22.0, left: 10.0, right: 10.0),
-            child: ProfileWidget(avatarRadius: 20.0),
+            child: Column(
+              children: [
+                ProfileWidget(avatarRadius: 20.0),
+                Divider(
+                  color: Colors.grey,
+                  height: 10,
+                  thickness: 0.5,
+                ),
+                
+              ],
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -30,7 +39,5 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
-  }  
-
+  }
 }
-
