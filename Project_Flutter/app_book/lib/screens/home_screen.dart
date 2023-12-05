@@ -1,3 +1,4 @@
+import 'package:app_book/widgets/book_row.dart';
 import 'package:app_book/widgets/menu_bar.dart';
 import 'package:app_book/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,11 @@ class HomeScreen extends StatelessWidget {
                   height: 10,
                   thickness: 0.5,
                 ),
-                
+                 BookRow(itemHeight: 300, itemWidth: 500, category: 'Hardcover Fiction', titleFontSize: 35, authorFontSize: 20,),
               ],
             ),
           ),
+         
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(

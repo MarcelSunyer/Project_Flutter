@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
           itemWidth: 150.0,
           itemHeight: 200.0,
           category: "hardcover-nonfiction", // Puedes cambiar la categoría aquí
+          titleFontSize: 16.0, // Puedes cambiar el tamaño de la letra del título aquí
+          authorFontSize: 12.0, // Puedes cambiar el tamaño de la letra del autor aquí
         ),
       ),
     );
@@ -32,11 +34,15 @@ class BookRow extends StatelessWidget {
     required this.itemWidth,
     required this.itemHeight,
     required this.category,
+    this.titleFontSize = 16.0,
+    this.authorFontSize = 12.0,
   }) : super(key: key);
 
   final double itemWidth;
   final double itemHeight;
   final String category;
+  final double titleFontSize;
+  final double authorFontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +66,8 @@ class BookRow extends StatelessWidget {
                     book: book,
                     width: itemWidth,
                     height: itemHeight,
+                    titleFontSize: titleFontSize,
+                    authorFontSize: authorFontSize,
                   );
                 }).toList(),
               );
@@ -77,11 +85,15 @@ class BookRowItem extends StatelessWidget {
     required this.book,
     required this.width,
     required this.height,
+    required this.titleFontSize,
+    required this.authorFontSize,
   }) : super(key: key);
 
   final Book book;
   final double width;
   final double height;
+  final double titleFontSize;
+  final double authorFontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -108,8 +120,8 @@ class BookRowItem extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 book.title,
-                style: const TextStyle(
-                  fontSize: 16.0,
+                style: TextStyle(
+                  fontSize: titleFontSize,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -121,8 +133,8 @@ class BookRowItem extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 book.author,
-                style: const TextStyle(
-                  fontSize: 12.0,
+                style: TextStyle(
+                  fontSize: authorFontSize,
                 ),
               ),
             ),
