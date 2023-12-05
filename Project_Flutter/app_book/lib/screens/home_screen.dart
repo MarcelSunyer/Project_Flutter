@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           ProfileWidget(),
-          bookselection(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
