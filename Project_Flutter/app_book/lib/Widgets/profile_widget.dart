@@ -7,66 +7,45 @@ class ProfileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: Stack(
           children: [
-            const SizedBox(height: 40),
-            const CircleAvatar(
-              radius: 40,
-              backgroundImage: AssetImage('assets/icono.png'),
-            ),
-            const Align(
-              alignment: Alignment.topCenter,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    'Hello, Juan!',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 82, 80, 80),
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'We wish you have a good day',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 136, 92, 92),
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 225,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 60, 70, 57),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                ),
-                const SizedBox(
-                    width:
-                        75), // Ajusta el espacio entre los contenedores según tus necesidades
-                Container(
-                  height: 225,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 105, 109, 129),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                ),
-              ],
+            _buildContainersRow(),
+            Positioned(
+              top: 20,
+              right: 20,
+              child: _buildProfileAvatar(),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildProfileAvatar() {
+    return const CircleAvatar(
+      radius: 40,
+      backgroundImage: AssetImage('assets/icono.png'),
+    );
+  }
+
+  Widget _buildContainersRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _buildContainer(Color.fromARGB(255, 60, 70, 57)),
+        const SizedBox(width: 75),
+        _buildContainer(Color.fromARGB(255, 105, 109, 129)),
+      ],
+    );
+  }
+
+  Widget _buildContainer(Color color) {
+    return Container(
+      height: 225,
+      width: 150,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(25),
       ),
     );
   }
