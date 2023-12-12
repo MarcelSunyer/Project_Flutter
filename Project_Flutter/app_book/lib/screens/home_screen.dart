@@ -8,33 +8,37 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 22.0, left: 10.0, right: 10.0),
+            padding: const EdgeInsets.only(top: 22.0, left: 10.0, right: 10.0),
             child: Column(
               children: [
-                ProfileWidget(avatarRadius: 20.0),
-                Divider(
+                const ProfileWidget(avatarRadius: 20.0),
+                const Divider(
                   color: Colors.grey,
                   height: 10,
                   thickness: 0.5,
                 ),
-                BookRow(
-                  itemHeight: 150,
-                  itemWidth: 300,
-                  category: 'Hardcover Fiction',
-                  titleFontSize: 35,
-                  authorFontSize: 20,
-                  numItems: 1,
+                Container(
+                  width: 450,
+                  height: 350,
+                  child: const BookRow(
+                    itemWidth: 400,
+                    itemHeight: 200,
+                    category: 'Mass Market Paperback',
+                    titleFontSize: 35,
+                    authorFontSize: 20,
+                    numItems: 1,
+                  ),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.grey,
                   height: 10,
                   thickness: 0.5,
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'New & Trending',
@@ -45,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                BookRow(
+                const BookRow(
                   itemHeight: 150,
                   itemWidth: 100,
                   category: 'Hardcover Fiction',
@@ -55,7 +59,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.only(bottom: 8.0),
