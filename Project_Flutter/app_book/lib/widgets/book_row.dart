@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
         body: const BookRow(
           itemWidth: 150.0,
           itemHeight: 200.0,
-          category: "hardcover-nonfiction", // Puedes cambiar la categoría aquí
-          titleFontSize: 16.0, // Puedes cambiar el tamaño de la letra del título aquí
-          authorFontSize: 12.0, // Puedes cambiar el tamaño de la letra del autor aquí
+          category: "hardcover-nonfiction",
+          titleFontSize: 16.0,
+          authorFontSize: 12.0,
         ),
       ),
     );
@@ -34,6 +34,7 @@ class BookRow extends StatelessWidget {
     required this.itemWidth,
     required this.itemHeight,
     required this.category,
+    this.numItems,
     this.titleFontSize = 16.0,
     this.authorFontSize = 12.0,
   }) : super(key: key);
@@ -41,6 +42,7 @@ class BookRow extends StatelessWidget {
   final double itemWidth;
   final double itemHeight;
   final String category;
+  final int? numItems;
   final double titleFontSize;
   final double authorFontSize;
 
@@ -60,8 +62,13 @@ class BookRow extends StatelessWidget {
                 return const Center(child: CircularProgressIndicator());
               }
               final bookList = snapshot.data!;
+
+              final limitedBookList = numItems != null
+                  ? bookList.take(numItems!).toList()
+                  : bookList;
+
               return Row(
-                children: bookList.map((book) {
+                children: limitedBookList.map((book) {
                   return BookRowItem(
                     book: book,
                     width: itemWidth,

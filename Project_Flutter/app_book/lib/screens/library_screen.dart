@@ -131,7 +131,12 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              BookRow(itemWidth: 100, itemHeight: 140, category: 'Hardcover Fiction', titleFontSize: 12, authorFontSize: 8,),
+              BookRow(
+                  itemWidth: 100,
+                  itemHeight: 140,
+                  category: 'Hardcover Fiction',
+                  titleFontSize: 12,
+                  authorFontSize: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -156,7 +161,13 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              BookRow(itemWidth: 100, itemHeight: 140, category: 'Mass Market Paperback', titleFontSize: 12, authorFontSize: 8,),
+              BookRow(
+                itemWidth: 100,
+                itemHeight: 140,
+                category: 'Mass Market Paperback',
+                titleFontSize: 12,
+                authorFontSize: 8,
+              ),
             ],
           ),
           Align(

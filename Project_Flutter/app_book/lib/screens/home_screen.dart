@@ -22,11 +22,12 @@ class HomeScreen extends StatelessWidget {
                   thickness: 0.5,
                 ),
                 BookRow(
-                  itemHeight: 300,
-                  itemWidth: 500,
+                  itemHeight: 150,
+                  itemWidth: 300,
                   category: 'Hardcover Fiction',
                   titleFontSize: 35,
                   authorFontSize: 20,
+                  numItems: 1,
                 ),
                 Divider(
                   color: Colors.grey,
