@@ -24,7 +24,7 @@ class BookListScreen extends StatelessWidget {
                 'My Books',
                 style: TextStyle(
                   fontSize: 50,
-                  fontFamily: 'MyFont',
+                  fontFamily: 'Analogist',
                   fontWeight: FontWeight.bold,
                 ),
               ),

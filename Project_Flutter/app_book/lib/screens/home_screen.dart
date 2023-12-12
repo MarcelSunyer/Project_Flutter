@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                     'New & Trending',
                     style: TextStyle(
                       fontSize: 32,
-                      fontFamily: 'MyFont',
+                      fontFamily: 'Analogist',
                       fontWeight: FontWeight.bold,
                     ),
                   ),

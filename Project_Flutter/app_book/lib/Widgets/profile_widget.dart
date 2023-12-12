@@ -20,7 +20,7 @@ class ProfileWidget extends StatelessWidget {
                 'Home',
                 style: TextStyle(
                   fontSize: 42,
-                  fontFamily: 'MyFont',
+                  fontFamily: 'Analogist',
                   fontWeight: FontWeight.bold,
                 ),
               ),

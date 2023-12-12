@@ -21,7 +21,7 @@ class LibraryScreen extends StatelessWidget {
                     'Library',
                     style: TextStyle(
                       fontSize: 50,
-                      fontFamily: 'MyFont',
+                      fontFamily: 'Analogist',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -37,7 +37,7 @@ class LibraryScreen extends StatelessWidget {
                       'Categories',
                       style: TextStyle(
                         fontSize: 32,
-                        fontFamily: 'MyFont',
+                        fontFamily: 'Analogist',
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -116,7 +116,7 @@ class LibraryScreen extends StatelessWidget {
                       'Novel',
                       style: TextStyle(
                         fontSize: 30,
-                        fontFamily: 'MyFont',
+                        fontFamily: 'Analogist',
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -146,7 +146,7 @@ class LibraryScreen extends StatelessWidget {
                       'Pocketbook',
                       style: TextStyle(
                         fontSize: 30,
-                        fontFamily: 'MyFont',
+                        fontFamily: 'Analogist',
                         fontWeight: FontWeight.w600,
                       ),
                     ),

@@ -18,7 +18,7 @@ class RandomProgressBar extends StatelessWidget {
       children: [
         Text(
           'Progress: $randomPercentage%',
-          style: const TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20,  fontFamily: 'Analogist'),
         ),
         const SizedBox(height: 20),
         Container(

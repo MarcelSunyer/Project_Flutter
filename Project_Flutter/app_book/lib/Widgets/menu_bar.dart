@@ -72,7 +72,7 @@ class MenuBarBook extends StatelessWidget {
                 child: const Column(
                   children: [
                     Icon(Icons.auto_stories_outlined, color: Colors.white),
-                    Text("My Books", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                    Text("My Books", style: TextStyle(color: Colors.white, fontFamily: 'Analogist', fontSize: 10.0)),
                   ],
                 ),
               ),
