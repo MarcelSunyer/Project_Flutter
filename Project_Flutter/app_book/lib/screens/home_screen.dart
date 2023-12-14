@@ -58,6 +58,21 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ), 
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 100, // Ajusta la altura según tus necesidades
+              decoration: BoxDecoration(
+                color: Colors.blue, // Color del fondo del contenedor
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+            ),
           ),
           const Align(
             alignment: Alignment.bottomCenter,
