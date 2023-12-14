@@ -11,22 +11,24 @@ class RandomProgressBar extends StatelessWidget {
 
     Color progressBarColor = calculateProgressBarColor(randomPercentage);
 
-    double progressBarWidth = MediaQuery.of(context).size.width * 0.7; // Ancho relativo al 70% de la pantalla
+    double progressBarWidth = MediaQuery.of(context).size.width *
+        0.7; 
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           'Progress: $randomPercentage%',
-          style: const TextStyle(fontSize: 20,  fontFamily: 'Analogist'),
+          style: const TextStyle(fontSize: 20, fontFamily: 'Analogist'),
         ),
         const SizedBox(height: 20),
         Container(
           width: progressBarWidth,
           height: 20,
-          alignment: Alignment.centerLeft, // Alinea el contenido a la izquierda
+          alignment: Alignment.centerLeft,
           child: Container(
-            width: progressBarWidth * (randomPercentage / 100), // Ancho relativo al porcentaje
+            width: progressBarWidth *
+                (randomPercentage / 100),
             height: 20,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),

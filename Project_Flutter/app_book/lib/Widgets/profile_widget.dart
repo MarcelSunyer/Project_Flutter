@@ -31,6 +31,7 @@ class ProfileWidget extends StatelessWidget {
       ),
     );
   }
+
   Widget _buildProfileAvatar() {
     return CircleAvatar(
       radius: avatarRadius,

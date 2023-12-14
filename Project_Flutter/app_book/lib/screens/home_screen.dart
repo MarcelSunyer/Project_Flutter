@@ -18,13 +18,13 @@ class HomeScreen extends StatelessWidget {
                 const ProfileWidget(avatarRadius: 20.0),
                 const Divider(
                   color: Colors.grey,
-                  height: 10,
+                  height: 5,
                   thickness: 0.5,
                 ),
-                Container(
+                const SizedBox(
                   width: 450,
-                  height: 350,
-                  child: const BookRow(
+                  height: 325,
+                  child: BookRow(
                     itemWidth: 400,
                     itemHeight: 200,
                     category: 'Mass Market Paperback',
@@ -51,27 +51,32 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const BookRow(
                   itemHeight: 150,
-                  itemWidth: 100,
+                  itemWidth: 120,
                   category: 'Hardcover Fiction',
-                  titleFontSize: 35,
-                  authorFontSize: 20,
+                  titleFontSize: 50,
+                  authorFontSize: 30,
+                ),
+                Container(
+                  width: 475,
+                  height: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color.fromARGB(
+                            255, 128, 112, 112), // Color de la sombra
+                        offset: Offset(
+                            0, 1), // Desplazamiento de la sombra en el eje y
+                        blurRadius: 20, // Radio de desenfoque de la sombra
+                      ),
+                    ],
+                    image: const DecorationImage(
+                      image: AssetImage("assets/daybook.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ],
-            ),
-          ), 
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: 100, // Ajusta la altura según tus necesidades
-              decoration: BoxDecoration(
-                color: Colors.blue, // Color del fondo del contenedor
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
             ),
           ),
           const Align(

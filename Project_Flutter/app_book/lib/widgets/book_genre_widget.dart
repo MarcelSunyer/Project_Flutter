@@ -5,7 +5,11 @@ class GenreWidget extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  const GenreWidget({super.key, required this.genre, required this.icon, required this.color});
+  const GenreWidget(
+      {super.key,
+      required this.genre,
+      required this.icon,
+      required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,10 @@ class GenreWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               genre,
-              style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold,),
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

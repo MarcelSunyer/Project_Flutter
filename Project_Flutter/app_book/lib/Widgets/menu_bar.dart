@@ -31,7 +31,8 @@ class MenuBarBook extends StatelessWidget {
         Container(
           width: width,
           height: height,
-          margin: const EdgeInsets.all(5.0), // Ajusta el margen según sea necesario
+          margin:
+              const EdgeInsets.all(5.0), // Ajusta el margen según sea necesario
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius - 5),
             color: backgroundColor,
@@ -42,37 +43,40 @@ class MenuBarBook extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  // Navegar a la pantalla de "Home"
-                 Navigator.of(context).pushNamed('/');
+                  Navigator.of(context).pushNamed('/');
                 },
                 child: const Column(
                   children: [
                     Icon(Icons.home_outlined, color: Colors.white),
-                    Text("Home", style: TextStyle(color: Colors.white,  fontSize: 10.0)),
+                    Text("Home",
+                        style: TextStyle(color: Colors.white, fontSize: 10.0)),
                   ],
                 ),
               ),
               InkWell(
                 onTap: () {
-                  // Navegar a la pantalla de "Library"
                   Navigator.of(context).pushNamed('/library');
                 },
                 child: const Column(
                   children: [
                     Icon(Icons.search_outlined, color: Colors.white),
-                    Text("Library", style: TextStyle(color: Colors.white, fontSize: 10.0)),
+                    Text("Library",
+                        style: TextStyle(color: Colors.white, fontSize: 10.0)),
                   ],
                 ),
               ),
               InkWell(
                 onTap: () {
-                  // Navegar a la pantalla de "My Books"
                   Navigator.of(context).pushNamed("/mybooks");
                 },
                 child: const Column(
                   children: [
                     Icon(Icons.auto_stories_outlined, color: Colors.white),
-                    Text("My Books", style: TextStyle(color: Colors.white, fontFamily: 'Analogist', fontSize: 10.0)),
+                    Text("My Books",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Analogist',
+                            fontSize: 10.0)),
                   ],
                 ),
               ),
