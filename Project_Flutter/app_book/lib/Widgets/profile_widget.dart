@@ -14,8 +14,8 @@ class ProfileWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 15.0),
               child: Text(
                 'Home',
                 style: TextStyle(
@@ -31,11 +31,10 @@ class ProfileWidget extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildProfileAvatar() {
     return CircleAvatar(
       radius: avatarRadius,
-      backgroundImage: AssetImage('assets/icono.png'),
+      backgroundImage: const AssetImage('assets/icono.png'),
     );
   }
 }
