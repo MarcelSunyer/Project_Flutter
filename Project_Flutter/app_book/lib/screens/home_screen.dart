@@ -63,11 +63,9 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15.0),
                     boxShadow: const [
                       BoxShadow(
-                        color: Color.fromARGB(
-                            255, 128, 112, 112), // Color de la sombra
-                        offset: Offset(
-                            0, 1), // Desplazamiento de la sombra en el eje y
-                        blurRadius: 20, // Radio de desenfoque de la sombra
+                        color: Color.fromARGB(255, 128, 112, 112),
+                        offset: Offset(0, 1),
+                        blurRadius: 20,
                       ),
                     ],
                     image: const DecorationImage(
