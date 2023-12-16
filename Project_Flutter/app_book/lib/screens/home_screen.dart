@@ -57,8 +57,8 @@ class HomeScreen extends StatelessWidget {
                   authorFontSize: 30,
                 ),
                 Container(
-                  width: 475,
-                  height: 300,
+                  width: 400,
+                  height: 225,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     boxShadow: const [
