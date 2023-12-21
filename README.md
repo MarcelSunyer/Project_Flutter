@@ -1,6 +1,6 @@
 # Project_Flutter
 
-Welcome to our collaborative Flutter project! Our goal is to create a feature-rich mobile application using Flutter and integrating it with a web API. This project, designed for groups of 2 to 4 members, encompasses both Task 2 and Task 3, contributing 30% to the overall course grade.
+Welcome to our collaborative Flutter project! Our goal is to create a feature-rich mobile application using Flutter and integrating it with a web API.
 
 ## Key Objectives
 - **Web API Integration:** The application will interact with a web API.
