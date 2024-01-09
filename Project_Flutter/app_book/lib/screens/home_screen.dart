@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                   height: 5,
                   thickness: 0.5,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 450,
                   height: 325,
                   child: BookRow(
@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
                     titleFontSize: 35,
                     authorFontSize: 20,
                     numItems: 1,
+                    parentContext: context,
                   ),
                 ),
                 const Divider(
@@ -49,12 +50,13 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const BookRow(
+                BookRow(
                   itemHeight: 150,
                   itemWidth: 120,
                   category: 'Hardcover Fiction',
                   titleFontSize: 50,
                   authorFontSize: 30,
+                  parentContext: context,
                 ),
                 Container(
                   width: 400,

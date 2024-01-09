@@ -9,12 +9,12 @@ class LibraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
           Column(
             children: [
-              Center(
+              const Center(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
@@ -27,8 +27,8 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SearchBarWidget(),
-              Row(
+              const SearchBarWidget(),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -52,7 +52,7 @@ class LibraryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
@@ -107,7 +107,7 @@ class LibraryScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -136,8 +136,10 @@ class LibraryScreen extends StatelessWidget {
                   itemHeight: 140,
                   category: 'Hardcover Fiction',
                   titleFontSize: 12,
-                  authorFontSize: 8),
-              Row(
+                  authorFontSize: 8, 
+                  parentContext: context,
+                  ),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
@@ -167,10 +169,11 @@ class LibraryScreen extends StatelessWidget {
                 category: 'Mass Market Paperback',
                 titleFontSize: 12,
                 authorFontSize: 8,
+                parentContext: context,
               ),
             ],
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.only(bottom: 8.0),

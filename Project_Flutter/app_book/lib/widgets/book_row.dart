@@ -1,33 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_book/api.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Book App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Book App'),
-        ),
-        body: const BookRow(
-          itemWidth: 150.0,
-          itemHeight: 200.0,
-          category: "hardcover-nonfiction",
-          titleFontSize: 16.0,
-          authorFontSize: 12.0,
-        ),
-      ),
-    );
-  }
-}
-
 class BookRow extends StatelessWidget {
   const BookRow({
     Key? key,
@@ -37,6 +10,7 @@ class BookRow extends StatelessWidget {
     this.numItems,
     this.titleFontSize = 16.0,
     this.authorFontSize = 12.0,
+    required this.parentContext, // Agrega el parámetro para el contexto
   }) : super(key: key);
 
   final double itemWidth;
@@ -45,6 +19,7 @@ class BookRow extends StatelessWidget {
   final int? numItems;
   final double titleFontSize;
   final double authorFontSize;
+  final BuildContext parentContext; // Añade el contexto aquí
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +50,7 @@ class BookRow extends StatelessWidget {
                     height: itemHeight,
                     titleFontSize: titleFontSize,
                     authorFontSize: authorFontSize,
+                    parentContext: parentContext, // Pasa el contexto aquí
                   );
                 }).toList(),
               );
@@ -94,6 +70,7 @@ class BookRowItem extends StatelessWidget {
     required this.height,
     required this.titleFontSize,
     required this.authorFontSize,
+    required this.parentContext, // Agrega el parámetro para el contexto
   }) : super(key: key);
 
   final Book book;
@@ -101,52 +78,58 @@ class BookRowItem extends StatelessWidget {
   final double height;
   final double titleFontSize;
   final double authorFontSize;
+  final BuildContext parentContext; // Añade el contexto aquí
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(8.0),
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: width,
-            height: height,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                book.imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: width,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                book.title,
-                style: TextStyle(
-                  fontSize: titleFontSize,
-                  fontWeight: FontWeight.bold,
+    return InkWell(
+      onTap: () {
+        Navigator.of(parentContext).pushNamed('/book_review');
+      },
+      child: Container(
+        margin: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: width,
+              height: height,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.network(
+                  book.imageUrl,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            width: width,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                book.author,
-                style: TextStyle(
-                  fontSize: authorFontSize,
+            SizedBox(
+              width: width,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  book.title,
+                  style: TextStyle(
+                    fontSize: titleFontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              width: width,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  book.author,
+                  style: TextStyle(
+                    fontSize: authorFontSize,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
