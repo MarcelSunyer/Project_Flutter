@@ -14,54 +14,53 @@ class BookListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'My Books',
-                style: TextStyle(
-                  fontSize: 50,
-                  fontFamily: 'Analogist',
-                  fontWeight: FontWeight.bold,
-                ),
+    return Scaffold(
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'My Books',
+              style: TextStyle(
+                fontSize: 50,
+                fontFamily: 'Analogist',
+                fontWeight: FontWeight.bold,
               ),
             ),
-            Expanded(
-              child: FutureBuilder(
-                future: apiLoadBooks(),
-                builder: (
-                  BuildContext context,
-                  AsyncSnapshot<List<Book>> snapshot,
-                ) {
-                  if (!snapshot.hasData) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                  final bookList = snapshot.data!;
-                  return SingleChildScrollView(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: bookList.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
-                          children: [
-                            BookListItem(
-                              book: bookList[index],
-                              width: itemWidth,
-                              height: itemHeight,
-                            ),
-                          ],
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
+          ),
+          Expanded(
+            child: FutureBuilder(
+              future: apiLoadBooks(),
+              builder: (
+                BuildContext context,
+                AsyncSnapshot<List<Book>> snapshot,
+              ) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                final bookList = snapshot.data!;
+                return SingleChildScrollView(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: bookList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        children: [
+                          BookListItem(
+                            book: bookList[index],
+                            width: itemWidth,
+                            height: itemHeight,
+                            parentContext: context, // Pasa el contexto aquí
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                );
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -73,71 +72,78 @@ class BookListItem extends StatelessWidget {
     required this.book,
     required this.width,
     required this.height,
+    required this.parentContext, // Agrega el parámetro para el contexto
   }) : super(key: key);
 
   final Book book;
   final double width;
   final double height;
+  final BuildContext parentContext; // Añade el contexto aquí
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(8.0),
-      padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey,
-          width: 1.0,
+    return InkWell(
+      onTap: () {
+        Navigator.of(parentContext).pushNamed('/book_review');
+      },
+      child: Container(
+        margin: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
         ),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: width,
-            height: height,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                book.imageUrl,
-                fit: BoxFit.cover,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: width,
+              height: height,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.network(
+                  book.imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          const SizedBox(width: 16.0),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  book.title,
-                  style: const TextStyle(
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
+            const SizedBox(width: 16.0),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    book.title,
+                    style: const TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 4.0),
-                Text(
-                  book.author,
-                  style: const TextStyle(
-                    fontSize: 18.0,
+                  const SizedBox(height: 4.0),
+                  Text(
+                    book.author,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  book.description,
-                  style: const TextStyle(
-                    fontSize: 14.0,
+                  const SizedBox(height: 8.0),
+                  Text(
+                    book.description,
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 12.0),
-                const RandomProgressBar(),
-              ],
+                  const SizedBox(height: 12.0),
+                  const RandomProgressBar(),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
