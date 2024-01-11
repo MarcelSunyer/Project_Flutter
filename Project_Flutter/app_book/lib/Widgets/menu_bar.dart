@@ -18,7 +18,6 @@ class MenuBarBook extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Contenedor con blur
         Positioned.fill(
           child: Container(
             decoration: BoxDecoration(
@@ -27,12 +26,11 @@ class MenuBarBook extends StatelessWidget {
             ),
           ),
         ),
-        // Contenedor principal con margen
         Container(
           width: width,
           height: height,
           margin:
-              const EdgeInsets.all(5.0), // Ajusta el margen según sea necesario
+              const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius - 5),
             color: backgroundColor,

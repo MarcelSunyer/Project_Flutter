@@ -31,7 +31,6 @@ class BookReadingWidget extends StatelessWidget {
             ),
           ),
         ),
-        // Contenedor principal con margen
         Container(
           width: width,
           height: height,

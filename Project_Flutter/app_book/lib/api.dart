@@ -25,7 +25,7 @@ class Book {
       author: json['author'],
       description: json['description'],
       imageUrl: json['book_image'],
-      amazonUrl: json['buy_links'][0]['url'], // Assuming the first link is Amazon
+      amazonUrl: json['buy_links'][0]['url'],
     );
   }
 }
@@ -35,7 +35,6 @@ Future<List<Book>> apiLoadBooks({String category = "hardcover-fiction"}) async {
   final response = await http.get(uri);
   final json = jsonDecode(response.body);
 
-  // Verificar si 'results' y 'books' existen y no son null
   if (json['results'] != null && json['results']['books'] != null) {
     final jsonBookList = json['results']['books'];
 

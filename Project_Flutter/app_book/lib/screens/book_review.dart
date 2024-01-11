@@ -1,9 +1,6 @@
 import 'package:app_book/widgets/book_reading_widget.dart';
 import 'package:app_book/widgets/topic_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:app_book/widgets/book_row.dart';
-import 'package:app_book/widgets/menu_bar.dart';
-import 'package:app_book/widgets/profile_widget.dart';
 import 'package:app_book/api.dart';
 
 class BookReviewScreen extends StatelessWidget {
