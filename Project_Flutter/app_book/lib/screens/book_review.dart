@@ -1,3 +1,4 @@
+import 'package:app_book/widgets/book_reading_widget.dart';
 import 'package:app_book/widgets/topic_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:app_book/widgets/book_row.dart';
@@ -90,7 +91,6 @@ class BookReviewScreen extends StatelessWidget {
                         color: Color.fromARGB(255, 238, 93, 83),
                       ),
                     ),
-                    
                     Text('E-Book'),
                   ],
                 ),
@@ -152,11 +152,32 @@ class BookReviewScreen extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 12.0),
             Padding(
               padding: const EdgeInsets.only(left: 16.0, right: 16.0),
               child: TopicWidget(
-              topics: const ['Geography', 'History', 'Ethnology', 'Anatomy', 'Best Seller'],
-                        ),
+                topics: const [
+                  'Geography',
+                  'History',
+                  'Ethnology',
+                  'Anatomy',
+                  'Best Seller'
+                ],
+              ),
+            ),
+            const SizedBox(height: 24.0),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                BookReadingWidget(
+                  text: 'Read',
+                  iconData: Icons.book,
+                ),
+                BookReadingWidget(
+                  text: 'Listen',
+                  iconData: Icons.book,
+                ),
+              ],
             ),
           ],
         ),
