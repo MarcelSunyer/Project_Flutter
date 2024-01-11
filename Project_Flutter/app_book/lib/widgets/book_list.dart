@@ -84,7 +84,10 @@ class BookListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(parentContext).pushNamed('/book_review');
+        Navigator.of(parentContext).pushNamed(
+          '/book_review',
+          arguments: book,
+        );
       },
       child: Container(
         margin: const EdgeInsets.all(8.0),
