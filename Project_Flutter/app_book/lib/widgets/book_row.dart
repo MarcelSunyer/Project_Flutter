@@ -21,7 +21,7 @@ class BookRow extends StatelessWidget {
   final double authorFontSize;
   final BuildContext parentContext; // Añade el contexto aquí
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView(
@@ -50,7 +50,14 @@ class BookRow extends StatelessWidget {
                     height: itemHeight,
                     titleFontSize: titleFontSize,
                     authorFontSize: authorFontSize,
-                    parentContext: parentContext, // Pasa el contexto aquí
+                    parentContext: parentContext,
+                    onTap: () {
+                      // Navigate to the book review page with book title as argument
+                      Navigator.of(parentContext).pushNamed(
+                        '/book_review',
+                        arguments: {'bookTitle': book.title},
+                      );
+                    },
                   );
                 }).toList(),
               );
@@ -63,6 +70,8 @@ class BookRow extends StatelessWidget {
 }
 
 class BookRowItem extends StatelessWidget {
+   final VoidCallback onTap;
+
   const BookRowItem({
     Key? key,
     required this.book,
@@ -70,7 +79,8 @@ class BookRowItem extends StatelessWidget {
     required this.height,
     required this.titleFontSize,
     required this.authorFontSize,
-    required this.parentContext, // Agrega el parámetro para el contexto
+    required this.parentContext,
+    required this.onTap,
   }) : super(key: key);
 
   final Book book;
@@ -83,9 +93,7 @@ class BookRowItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(parentContext).pushNamed('/book_review');
-      },
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.all(8.0),
         padding: const EdgeInsets.all(8.0),
