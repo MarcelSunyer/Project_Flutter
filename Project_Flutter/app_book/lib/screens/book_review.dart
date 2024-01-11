@@ -1,3 +1,4 @@
+import 'package:app_book/widgets/topic_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:app_book/widgets/book_row.dart';
 import 'package:app_book/widgets/menu_bar.dart';
@@ -150,6 +151,12 @@ class BookReviewScreen extends StatelessWidget {
                   fontSize: 16.0,
                 ),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+              child: TopicWidget(
+              topics: const ['Geography', 'History', 'Ethnology', 'Anatomy', 'Best Seller'],
+                        ),
             ),
           ],
         ),
