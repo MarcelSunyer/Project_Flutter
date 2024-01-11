@@ -16,20 +16,20 @@ class BookReviewScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 CustomIconContainer(
-                  child: const Icon(Icons.share),
+                  child: Icon(Icons.share_outlined),
                 ),
-                const SizedBox(width: 16),
+                SizedBox(width: 16),
                 CustomIconContainer(
-                  child: const Icon(
-                    Icons.favorite,
+                  child: Icon(
+                    Icons.favorite_outline,
                     color: Colors.red,
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 16,
                 )
               ],
@@ -52,7 +52,7 @@ class BookReviewScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 16,
+              height: 32,
             ),
             Container(
               width: 200,
@@ -60,27 +60,95 @@ class BookReviewScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(
-                        0.5),
+                    color: Colors.black.withOpacity(0.5),
                     blurRadius: 10,
                     spreadRadius: 2,
                   ),
                 ],
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(
-                    10),
+                borderRadius: BorderRadius.circular(10),
                 child: Image.network(
                   book.imageUrl,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            const SizedBox(height: 8.0),
-            Text(
-              book.description,
-              style: const TextStyle(
-                fontSize: 14.0,
+            const SizedBox(
+              height: 22.0,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(width: 1),
+                Column(
+                  children: [
+                    CustomIconContainer(
+                      child: Icon(
+                        Icons.phone_iphone,
+                        color: Color.fromARGB(255, 238, 93, 83),
+                      ),
+                    ),
+                    
+                    Text('E-Book'),
+                  ],
+                ),
+                SizedBox(
+                  width: 1,
+                ),
+                Column(
+                  children: [
+                    CustomIconContainer(
+                      child: Icon(
+                        Icons.headphones,
+                        color: Color.fromARGB(255, 238, 93, 83),
+                      ),
+                    ),
+                    Text('Audio'),
+                  ],
+                ),
+                SizedBox(
+                  width: 1,
+                ),
+                Column(
+                  children: [
+                    CustomIconContainer(
+                      child: Icon(
+                        Icons.star_outline,
+                        color: Color.fromARGB(255, 238, 93, 83),
+                      ),
+                    ),
+                    Text('4,8'),
+                  ],
+                ),
+                SizedBox(
+                  width: 1,
+                ),
+                Column(
+                  children: [
+                    CustomIconContainer(
+                      child: Icon(
+                        Icons.auto_stories_outlined,
+                        color: Color.fromARGB(255, 238, 93, 83),
+                      ),
+                    ),
+                    Text('300 pages'),
+                  ],
+                ),
+                SizedBox(
+                  width: 1,
+                ),
+              ],
+            ),
+            const SizedBox(height: 12.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Text(
+                book.description,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
               ),
             ),
           ],
