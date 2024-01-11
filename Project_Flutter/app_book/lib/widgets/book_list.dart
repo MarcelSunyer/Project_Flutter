@@ -50,7 +50,7 @@ class BookListScreen extends StatelessWidget {
                             book: bookList[index],
                             width: itemWidth,
                             height: itemHeight,
-                            parentContext: context, // Pasa el contexto aquí
+                            parentContext: context, 
                           ),
                         ],
                       );
@@ -72,14 +72,13 @@ class BookListItem extends StatelessWidget {
     required this.book,
     required this.width,
     required this.height,
-    required this.parentContext, // Agrega el parámetro para el contexto
+    required this.parentContext, 
   }) : super(key: key);
 
   final Book book;
   final double width;
   final double height;
-  final BuildContext parentContext; // Añade el contexto aquí
-
+  final BuildContext parentContext; 
   @override
   Widget build(BuildContext context) {
     return InkWell(

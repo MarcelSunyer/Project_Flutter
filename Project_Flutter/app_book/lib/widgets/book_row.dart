@@ -10,7 +10,7 @@ class BookRow extends StatelessWidget {
     this.numItems,
     this.titleFontSize = 16.0,
     this.authorFontSize = 12.0,
-    required this.parentContext, // Agrega el parámetro para el contexto
+    required this.parentContext, 
   }) : super(key: key);
 
   final double itemWidth;
@@ -19,7 +19,7 @@ class BookRow extends StatelessWidget {
   final int? numItems;
   final double titleFontSize;
   final double authorFontSize;
-  final BuildContext parentContext; // Añade el contexto aquí
+  final BuildContext parentContext; 
 
    @override
   Widget build(BuildContext context) {
@@ -52,7 +52,6 @@ class BookRow extends StatelessWidget {
                     authorFontSize: authorFontSize,
                     parentContext: parentContext,
                     onTap: () {
-                      // Navigate to the book review page with book title as argument
                       Navigator.of(parentContext).pushNamed(
                         '/book_review',
                         arguments: {'bookTitle': book.title},
@@ -88,7 +87,7 @@ class BookRowItem extends StatelessWidget {
   final double height;
   final double titleFontSize;
   final double authorFontSize;
-  final BuildContext parentContext; // Añade el contexto aquí
+  final BuildContext parentContext; 
 
   @override
   Widget build(BuildContext context) {
