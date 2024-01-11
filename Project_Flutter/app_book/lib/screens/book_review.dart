@@ -57,8 +57,8 @@ class BookReviewScreen extends StatelessWidget {
               height: 32,
             ),
             Container(
-              width: 200,
-              height: 300,
+              width: 250,
+              height: 350,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
