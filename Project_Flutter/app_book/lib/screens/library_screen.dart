@@ -83,24 +83,8 @@ class LibraryScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: GenreWidget(
-                        genre: "Motivation",
-                        icon: Icons.lightbulb_outline,
-                        color: Color.fromARGB(255, 215, 100, 60),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: GenreWidget(
-                        genre: "Motivation",
-                        icon: Icons.lightbulb_outline,
-                        color: Color.fromARGB(255, 215, 100, 60),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: GenreWidget(
-                        genre: "Motivation",
-                        icon: Icons.lightbulb_outline,
+                        genre: "Creativity",
+                        icon: Icons.create_outlined,
                         color: Color.fromARGB(255, 215, 100, 60),
                       ),
                     ),
