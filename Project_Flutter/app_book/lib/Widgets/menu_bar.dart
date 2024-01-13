@@ -29,8 +29,7 @@ class MenuBarBook extends StatelessWidget {
         Container(
           width: width,
           height: height,
-          margin:
-              const EdgeInsets.all(5.0),
+          margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius - 5),
             color: backgroundColor,

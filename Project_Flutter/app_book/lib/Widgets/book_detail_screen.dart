@@ -13,7 +13,7 @@ class BookDetailsScreen extends StatelessWidget {
         title: Text(book.title),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -23,17 +23,16 @@ class BookDetailsScreen extends StatelessWidget {
               width: double.infinity,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               'Author: ${book.author}',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               'Description: ${book.description}',
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            // Otros detalles del libro según tus necesidades
           ],
         ),
       ),

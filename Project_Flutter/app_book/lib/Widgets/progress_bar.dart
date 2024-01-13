@@ -11,8 +11,7 @@ class RandomProgressBar extends StatelessWidget {
 
     Color progressBarColor = calculateProgressBarColor(randomPercentage);
 
-    double progressBarWidth = MediaQuery.of(context).size.width *
-        0.7; 
+    double progressBarWidth = MediaQuery.of(context).size.width * 0.7;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -27,8 +26,7 @@ class RandomProgressBar extends StatelessWidget {
           height: 20,
           alignment: Alignment.centerLeft,
           child: Container(
-            width: progressBarWidth *
-                (randomPercentage / 100),
+            width: progressBarWidth * (randomPercentage / 100),
             height: 20,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),

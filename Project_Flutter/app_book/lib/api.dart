@@ -31,7 +31,8 @@ class Book {
 }
 
 Future<List<Book>> apiLoadBooks({String category = "hardcover-fiction"}) async {
-  final uri = Uri.parse("https://api.nytimes.com/svc/books/v3/lists/current/$category.json?api-key=vuY5P7B0Dc4I2xGxtoEPadALIQPnIIT6");
+  final uri = Uri.parse(
+      "https://api.nytimes.com/svc/books/v3/lists/current/$category.json?api-key=vuY5P7B0Dc4I2xGxtoEPadALIQPnIIT6");
   final response = await http.get(uri);
   final json = jsonDecode(response.body);
 
@@ -45,21 +46,21 @@ Future<List<Book>> apiLoadBooks({String category = "hardcover-fiction"}) async {
     }
 
     return bookList;
-  } 
+  }
   return [];
 }
 
-Future<List<String>> apiLoadBookNames({String category = "hardcover-fiction"}) async {
+Future<List<String>> apiLoadBookNames(
+    {String category = "hardcover-fiction"}) async {
   final books = await apiLoadBooks(category: category);
 
-  // Mapear los nombres de los libros
   final List<String> bookNames = books.map((book) => book.title).toList();
 
   return bookNames;
 }
 
-Future<List<Book>> apiLoadAllBooks() async {
-  final books = await apiLoadBooks(); // Supongo que esta es una llamada válida a tu función de carga de libros
+Future<List<Book>> apiLoadAllBookNames() async {
+  final List<Book> books = await apiLoadBooks();
 
   return books;
 }

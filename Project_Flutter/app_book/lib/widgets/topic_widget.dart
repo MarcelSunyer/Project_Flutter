@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TopicWidget extends StatelessWidget {
   final List<String> topics;
 
-  TopicWidget({required this.topics});
+  const TopicWidget({super.key, required this.topics});
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +26,15 @@ class TopicWidget extends StatelessWidget {
 class TopicPill extends StatelessWidget {
   final String topic;
 
-  TopicPill({required this.topic});
+  const TopicPill({super.key, required this.topic});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       decoration: BoxDecoration(
-        color: Colors.grey[300], 
-        borderRadius: BorderRadius.circular(20.0), 
+        color: Colors.grey[300],
+        borderRadius: BorderRadius.circular(20.0),
       ),
       child: Text(
         topic,
