@@ -150,10 +150,10 @@ class BookReviewScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 16.0, right: 16.0),
               child: TopicWidget(
-                topics: const [
+                topics: [
                   'Geography',
                   'History',
                   'Ethnology',
