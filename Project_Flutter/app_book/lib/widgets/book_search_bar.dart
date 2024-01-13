@@ -1,4 +1,5 @@
 import 'package:app_book/api.dart';
+import 'package:app_book/screens/book_review.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatefulWidget {
@@ -62,7 +63,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     // En este ejemplo, carga los libros desde la API y compara los nombres
 
     // Cargar libros desde la API
-    List<String> bookNames = await apiLoadBookNamess();
+    List<String> bookNames = await apiLoadBooks();
 
     // Comparar el valor ingresado con los nombres de los libros
     bool bookFound = bookNames.contains(value);
@@ -71,16 +72,16 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => NextPage(searchValue: value, bookFound: bookFound),
+        builder: (context) => BookReviewScreen(),
       ),
     );
   }
 
-  Future<List<String>> apiLoadBookNamess() async {
+  Future<List<String>> apiLoadBooks() async {
     // Lógica para cargar los nombres de los libros desde la API aquí
     // Debes implementar tu lógica para cargar libros desde la API y extraer los nombres
     // Aquí, devuelvo una lista de nombres ficticios como ejemplo
-    return apiLoadBookNames();
+    return apiLoadAllBookNames();
   }
 }
 

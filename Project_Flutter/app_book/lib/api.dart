@@ -57,3 +57,12 @@ Future<List<String>> apiLoadBookNames({String category = "hardcover-fiction"}) a
 
   return bookNames;
 }
+
+Future<List<String>> apiLoadAllBookNames() async {
+  final books = await apiLoadBooks();
+
+  // Mapear los nombres de los libros
+  final List<String> bookNames = books.map((book) => book.title).toList();
+
+  return bookNames;
+}
