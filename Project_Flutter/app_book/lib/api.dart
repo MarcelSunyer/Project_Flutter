@@ -58,11 +58,8 @@ Future<List<String>> apiLoadBookNames({String category = "hardcover-fiction"}) a
   return bookNames;
 }
 
-Future<List<String>> apiLoadAllBookNames() async {
-  final books = await apiLoadBooks();
+Future<List<Book>> apiLoadAllBooks() async {
+  final books = await apiLoadBooks(); // Supongo que esta es una llamada válida a tu función de carga de libros
 
-  // Mapear los nombres de los libros
-  final List<String> bookNames = books.map((book) => book.title).toList();
-
-  return bookNames;
+  return books;
 }

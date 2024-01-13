@@ -1,8 +1,8 @@
 import 'package:app_book/api.dart';
-import 'package:app_book/screens/book_review.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatefulWidget {
+ 
   const SearchBarWidget({Key? key}) : super(key: key);
 
   @override
@@ -10,7 +10,8 @@ class SearchBarWidget extends StatefulWidget {
 }
 
 class _SearchBarWidgetState extends State<SearchBarWidget> {
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +34,9 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                 child: TextField(
                   controller: _searchController,
                   onSubmitted: (value) {
-                    _handleSearch(value);
+                    _handleSearch(value, context);
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Book, author, theme...',
                     border: InputBorder.none,
                   ),
@@ -58,30 +59,35 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
     );
   }
 
-  void _handleSearch(String value) async {
-    // Realiza la lógica de búsqueda aquí (puedes modificar según tu implementación)
-    // En este ejemplo, carga los libros desde la API y compara los nombres
+void _handleSearch(String value,BuildContext contexts ) async {
+  
+  List<Book> bookList = await apiLoadBooks();
 
-    // Cargar libros desde la API
-    List<String> bookNames = await apiLoadBooks();
 
-    // Comparar el valor ingresado con los nombres de los libros
-    bool bookFound = bookNames.contains(value);
 
-    // Navegar a la próxima página con el resultado de la búsqueda
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => BookReviewScreen(),
-      ),
-    );
-  }
+Book? foundBook;
 
-  Future<List<String>> apiLoadBooks() async {
+try {
+  foundBook = bookList.firstWhere((book) => book.title == value);
+} catch (e) {
+  // Handle the exception or provide a default value
+  foundBook = null;
+}
+if (foundBook != null) {
+  // ignore: use_build_context_synchronously
+  Navigator.of(contexts).pushNamed(
+                        '/book_review',
+                        arguments: foundBook,
+                      );
+}
+
+}
+
+  Future<List<Book>> apiLoadBooks() async {
     // Lógica para cargar los nombres de los libros desde la API aquí
     // Debes implementar tu lógica para cargar libros desde la API y extraer los nombres
     // Aquí, devuelvo una lista de nombres ficticios como ejemplo
-    return apiLoadAllBookNames();
+    return apiLoadAllBooks();
   }
 }
 
@@ -112,4 +118,5 @@ class NextPage extends StatelessWidget {
         ),
       ),
     );
-  }}
+  }
+}
